@@ -37,3 +37,6 @@ Ensure you have the following installed:
     npm run dev
 
 4. Open http://localhost:3000 in your browser.
+
+## 🚀 Live Demo  
+[Click here](https://myaza-frontend-test-vera.vercel.app/) to view the deployed project on Vercel.
