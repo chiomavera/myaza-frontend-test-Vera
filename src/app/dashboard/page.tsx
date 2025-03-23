@@ -2,16 +2,58 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Analytics from "../components/Analytics";
 import CardContainer from "../components/CardContainer";
-import Transactions from "../components/Transactions";
+import TransactionsTable from "../components/TransactionsTable";
 import Income from "../components/Income";
 import Activity from "../components/Activity";
 
 export default function Dashboard() {
+  const transactions1 = [
+    {
+      Name: "Adobe After Effect",
+      Date: "Sat, 20 Apr 2020",
+      Amount: "$80.09",
+      Status: "Deposited",
+     imageURL:  "/Adobe.svg"
+    },
+    {
+      Name: "McDonald's",
+      Date: "Sat, 20 Apr 2020",
+      Amount: "$80.09",
+      Status: "Deposited",
+     imageURL:  "/McDonald.svg"
+    },
+    {
+      Name: "Levi",
+      Date: "Sat, 20 Apr 2020",
+      Amount: "$80.09",
+      Status: "Deposited",
+     imageURL:  "/Levi.svg"
+    },
+    {
+      Name: "Adobe After",
+      Date: "Sat, 20 Apr 2020",
+      Amount: "$80.09",
+      Status: "Deposited",
+     imageURL:  "/Adobe.svg"
+    },
+    {
+      Name: "Levi",
+      Date: "Sat, 20 Apr 2020",
+      Amount: "$80.09",
+      Status: "Deposited",
+     imageURL:  "/Levi.svg"
+    },
+  ];
+
   return (
     <div className="flex max-w-full">
       <Sidebar />
-      <div className="flex flex-col justify-center gap-10 px-10">
-        <Header title="Welcome Back, Ali" description="Here's what's happening with store today." imageUrl="/Wave.svg"/>
+      <div className="flex flex-col justify-center gap-10 py-10 px-10">
+        <Header
+          title="Welcome Back, Ali"
+          description="Here's what's happening with store today."
+          imageUrl="/Wave.svg"
+        />
         <main className="flex gap-10">
           <section className="flex flex-col gap-10">
             <div className="flex gap-6">
@@ -31,7 +73,10 @@ export default function Dashboard() {
               />
             </div>
             <Analytics />
-            <Transactions />
+            <TransactionsTable
+              columns={["Name", "Date", "Amount", "Status"]}
+              data={transactions1} 
+            />
           </section>
           <section className="flex flex-col gap-10">
             <CardContainer />

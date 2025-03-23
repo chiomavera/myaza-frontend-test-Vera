@@ -2,12 +2,48 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import WalletType from "../components/WalletType";
+import TransactionsTable from "../components/TransactionsTable";
 
 function Wallet() {
+  const transactions2 = [
+    {
+      imageURL: "/Adobe.svg",
+      Name: "Adobe After Effect",
+      Date: "Sat, 20 Apr 2020",
+      Description: "Adobe after Virtual Card top-up",
+      Amount: "$80.09",
+      Status: "Deposited",
+    },
+    {
+      imageURL: "/Adobe.svg",
+      Name: "Adobe After Effect",
+      Date: "Sat, 20 Apr 2020",
+      Description: "Adobe after Virtual Card top-up",
+      Amount: "$80.09",
+      Status: "Deposited",
+    },
+    {
+      imageURL: "/Adobe.svg",
+      Name: "Adobe After Effect",
+      Date: "Sat, 20 Apr 2020",
+      Description: "Adobe after Virtual Card top-up",
+      Amount: "$80.09",
+      Status: "Deposited",
+    },
+    {
+      imageURL: "/Adobe.svg",
+      Name: "Adobe After Effect",
+      Date: "Sat, 20 Apr 2020",
+      Description: "Adobe after Virtual Card top-up",
+      Amount: "$80.09",
+      Status: "Deposited",
+    },
+  ];
+
   return (
     <div className="flex max-w-full">
       <Sidebar />
-      <div className="flex flex-col justify-center gap-10 px-10">
+      <div className="flex flex-col gap-10 px-10 mt-10">
         <Header
           title="My wallets"
           description="Manage all your wallets from here"
@@ -43,12 +79,27 @@ function Wallet() {
             </div>
           </div>
           <div className="flex gap-6">
-          <WalletType walletType="NGN Wallet" balance="Balance: 245,800.89" imageUrl="/NGN.svg"/>
-          <WalletType walletType="GBP Wallet" balance="Balance: 245,800.89" imageUrl="/GBP.svg"/>
-          <WalletType walletType="USD Wallet" balance="Balance: 245,800.89" imageUrl="/USD.svg"/>
+            <WalletType
+              walletType="NGN Wallet"
+              balance="Balance: 245,800.89"
+              imageUrl="/NGN.svg"
+            />
+            <WalletType
+              walletType="GBP Wallet"
+              balance="Balance: 245,800.89"
+              imageUrl="/GBP.svg"
+            />
+            <WalletType
+              walletType="USD Wallet"
+              balance="Balance: 245,800.89"
+              imageUrl="/USD.svg"
+            />
           </div>
         </section>
-        <section></section>
+        <TransactionsTable
+          columns={["Name", "Date", "Description", "Amount", "Status"]}
+          data={transactions2}
+        />
       </div>
     </div>
   );
