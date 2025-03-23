@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Sidebar() {
   return (
-    <div className="w-[293px] h-[1100px] bg-foreground flex flex-col items-center gap-[39.5px] pt-[44.71px]">
+    <div className="w-[230px] 2xl:w-[293px] max-h-full bg-foreground flex flex-col items-center gap-10 pt-[44.71px] p-5">
       <div className="flex flex-col">
         <div className="flex justify-center items-center gap-2 ">
         <Image
@@ -22,7 +22,7 @@ export default function Sidebar() {
       </div>
 
       <nav className="flex flex-col gap-7">
-        <div className="w-[237.035px] flex flex-col gap-4">
+        <div className="w-[200px] 2xl:w-[237.035px] flex flex-col gap-4">
           <Link
             href="/dashboard"
             className="w-full flex items-center gap-4.5 p-4 rounded-lg bg-lightBg"
@@ -97,7 +97,7 @@ export default function Sidebar() {
         </div>
       </nav>
 
-      <div className="flex justify-between items-center gap-15.5 mt-60">
+      <div className="w-[200px] flex justify-between items-center mt-90">
         <div className="flex items-center gap-2">
           <Image
             src="/Profile.svg"
@@ -107,13 +107,13 @@ export default function Sidebar() {
           />
           <div className="flex flex-col">
             <span className="flex text-base font-bold">Ali Riaz</span>
-            <span className="flex text-sm font-normal">Web Developer</span>
+            <span className="flex text-xs font-normal">Web Developer</span>
           </div>
         </div>
         <div>
           <Image
             src="/arrow-down.svg"
-            alt="Brand logo"
+            alt="arrown down"
             width={16}
             height={16}
           />
