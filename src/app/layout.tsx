@@ -7,9 +7,8 @@ const karla = Karla({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
-  title: "Urify",
+  title: "Uifry",
   description: "Myaza frontend test",
 };
 
