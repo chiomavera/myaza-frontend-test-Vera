@@ -2,17 +2,6 @@
 
 A modern, responsive dashboard interface built with **Next.js** and **Tailwind CSS**. The application features an interactive UI for managing financial transactions, wallets, and analytics.
 
-## 📸 Screenshots
-
-### Login Page  
-![Login Page](Login.PNG)  
-
-### Dashboard  
-![Dashboard](Dashboard.PNG)  
-
-### Wallets Page  
-![Wallets](Wallet.PNG)  
-
 ## ✨ Features
 - **Authentication**: Secure login for user access.
 - **Dashboard**: View total income, total balance, and analytics.
