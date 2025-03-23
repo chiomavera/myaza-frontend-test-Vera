@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Sidebar() {
   return (
-    <div className="w-[293px] h-[1024px] bg-foreground flex flex-col items-center gap-[39.5px] pt-[44.71px]">
+    <div className="w-[293px] h-[1100px] bg-foreground flex flex-col items-center gap-[39.5px] pt-[44.71px]">
       <div className="flex flex-col">
         <div className="flex justify-center items-center gap-2 ">
         <Image
@@ -24,12 +24,12 @@ export default function Sidebar() {
       <nav className="flex flex-col gap-7">
         <div className="w-[237.035px] flex flex-col gap-4">
           <Link
-            href=""
+            href="/dashboard"
             className="w-full flex items-center gap-4.5 p-4 rounded-lg bg-lightBg"
           >
             <Image
               src="/Dashboard.svg"
-              alt="dashboard"
+              alt="A dashboard icon"
               width={20}
               height={20}
             />
@@ -37,25 +37,25 @@ export default function Sidebar() {
               Dashboard
             </span>
           </Link>
-          <Link href="" className="w-full flex items-center gap-4.5 p-4">
+          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
             <Image
               src="/Analytics.svg"
-              alt="dashboard"
+              alt="An analytics icon"
               width={20}
               height={20}
             />
             <span className="text-base">Analytics</span>
           </Link>
-          <Link href="" className="w-full flex items-center gap-4.5 p-4">
+          <Link href="/wallet" className="w-full flex items-center gap-4.5 p-4">
             <Image
               src="/Wallet.svg"
-              alt="dashboard"
+              alt="A wallet icon"
               width={20}
               height={20}
             />
             <span className="text-base">My Wallet</span>
           </Link>
-          <Link href="" className="w-full flex items-center gap-4.5 p-4">
+          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
             <Image
               src="/User.svg"
               alt="user icon"
@@ -64,7 +64,7 @@ export default function Sidebar() {
             />
             Accounts
           </Link>
-          <Link href="" className="w-full flex items-center gap-4.5 p-4">
+          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
             <Image
               src="/Settings.svg"
               alt="settings icon"
@@ -76,7 +76,7 @@ export default function Sidebar() {
         </div>
 
         <div className="flex flex-col gap-4">
-        <Link href="" className="w-full flex items-center gap-4.5 p-4">
+        <Link href="#" className="w-full flex items-center gap-4.5 p-4">
             <Image
               src="/Help.svg"
               alt="help icon"
@@ -85,19 +85,19 @@ export default function Sidebar() {
             />
             Help Center
           </Link>
-          <Link href="" className="w-full flex items-center gap-4.5 p-4">
+          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
             <Image
               src="/Dark.svg"
-              alt="dashboard"
+              alt="A dark mode toggle icon"
               width={20}
               height={20}
             />
-            Dashboard
+            Dark Mode
           </Link>
         </div>
       </nav>
 
-      <div className="w-[237.035px] flex justify-between items-center gap-15.5">
+      <div className="flex justify-between items-center gap-15.5 mt-60">
         <div className="flex items-center gap-2">
           <Image
             src="/Profile.svg"
