@@ -91,7 +91,7 @@ function Login() {
               />
               <button
                 type="button"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#CBC8FF] text-sm font-bold cursor-pointer"
+                className="absolute right-[-100px] top-1/2 transform -translate-y-1/2 text-[#CBC8FF] text-sm font-bold cursor-pointer"
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? "Hide" : "Show"}
