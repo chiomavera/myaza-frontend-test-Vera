@@ -10,7 +10,7 @@ interface IncomeProps {
 
 function Income({title, price, imageUrl, priceCount, customClass }: IncomeProps) {
   return (
-    <div className="flex p-4 justify-between align-center rounded-2xl bg-foreground gap-40">
+    <div className="w-full flex p-4 justify-between align-center rounded-2xl bg-foreground">
         <div className="flex gap-3">
           <Image src={imageUrl} alt="icon" width={40} height={40} />
             <div className="flex flex-col">

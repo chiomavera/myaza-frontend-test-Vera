@@ -5,7 +5,7 @@ import CardHeading from "./CardHeading";
 
 function Activity() {
   return (
-    <section className="bg-foreground w-[439px]  pt-4 px-4 pb-8 rounded-2xl">
+    <section className="bg-foreground  pt-4 px-4 pb-8 rounded-2xl">
       <div className="flex justify-between">
         <CardHeading heading="Activity"/>
         <Calender label="Month" />

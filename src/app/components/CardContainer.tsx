@@ -4,7 +4,7 @@ import CardHeading from "./CardHeading"
 
 function CardContainer() {
   return (
-    <div className="bg-foreground w-[439px] flex flex-col p-6 rounded-2xl">
+    <div className="bg-foreground flex flex-col p-6 rounded-2xl">
         <CardHeading heading="My Card"/>
         <div className="flex flex-col mt-4 mb-5">
             <span className="text-[#8C89B4] text-base">card Balance</span>

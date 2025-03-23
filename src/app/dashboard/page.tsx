@@ -55,7 +55,7 @@ export default function Dashboard() {
           imageUrl="/Wave.svg"
         />
         <main className="flex gap-10">
-          <section className="flex flex-col gap-10">
+          <section className="w-[588px] flex flex-col gap-10">
             <div className="flex gap-6">
               <Income
                 title="Total Income"
@@ -78,7 +78,7 @@ export default function Dashboard() {
               data={transactions1} 
             />
           </section>
-          <section className="flex flex-col gap-10">
+          <section className="w-[439px] flex flex-col gap-10">
             <CardContainer />
             <Activity />
           </section>
