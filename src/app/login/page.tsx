@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import BrandLogo from "/Public/Logo.svg";
+import BrandName from "/Public/uifry.svg";
+import Star from "/Public/star.svg"
 
 function Login() {
   const [email, setEmail] = useState<string>("");
@@ -46,8 +49,8 @@ function Login() {
       <section className="flex flex-col w-full lg:w-1/2 pt-10 md:pt-20 lg:pt-36 2xl:pt-48 px-6 sm:px-8 md:px-12 lg:pl-16 xl:px-20 2xl:px-32 bg-foreground">
         {/* Logo */}
         <div className="flex justify-center items-center gap-2 mb-6 2xl:mb-8">
-          <Image src="/logo2.svg" alt="Brand logo" width={31} height={31} className="2xl:w-10 2xl:h-10" />
-          <Image src="/uifry.svg" alt="Brand name" width={60} height={27} className="2xl:w-72 2xl:h-auto" />
+          <BrandLogo size="31.042" className="text-[#6359E9] 2xl:w-10 2xl:h-10" />
+          <BrandName width="60.158" height="26.755" className="2xl:w-72 2xl:h-auto"/>
         </div>
 
         {/* Heading */}
@@ -125,7 +128,7 @@ function Login() {
       <section className="hidden lg:flex flex-col justify-center items-start w-full lg:w-1/2 pt-16 2xl:pt-24 lg:pl-8 xl:pl-16 2xl:pl-24">
         {/* Testimonial */}
         <div className="max-w-md 2xl:max-w-2xl">
-          <Image src="/star.svg" alt="Star rating" width={120} height={20} className="w-auto h-auto 2xl:scale-125 2xl:origin-left" />
+          <Star size="120" className="w-auto h-auto 2xl:scale-125 2xl:origin-left"/>
           <p className="text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold leading-snug 2xl:leading-normal text-white mt-4 2xl:mt-6">
             "I've been using Uifry for over a year, and it's helped simplify all my payments."
           </p>
