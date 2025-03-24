@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import BrandLogo from "/Public/Logo.svg";
-import BrandName from "/Public/uifry.svg";
-import Star from "/Public/star.svg"
+import BrandLogo from "@/assests/Logo.svg";
+import BrandName from "@/assests/uifry.svg";
+import Star from "@/assests/star.svg"
 
 function Login() {
   const [email, setEmail] = useState<string>("");

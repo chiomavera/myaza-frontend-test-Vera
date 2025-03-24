@@ -3,16 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import DashboardIcon from "/public/Dashboard.svg";
-import AnalyticsIcon from "/public/Analytics.svg";
-import WalletIcon from "/public/Wallet.svg";
-import UserIcon from "/public/User.svg";
-import SettingsIcon from "/public/Settings.svg";
-import HelpIcon from "/public/Help.svg";
-import MoonIcon from "/public/Moon.svg";
-import ArrowDown from "/public/arrow-down.svg";
-import BrandLogo from "/Public/Logo.svg";
-import BrandName from "/Public/uifry.svg";
+import DashboardIcon from "@/assests/Dashboard.svg";
+import AnalyticsIcon from "@/assests/Analytics.svg";
+import WalletIcon from "@/assests/Wallet.svg";
+import UserIcon from "@/assests/User.svg";
+import SettingsIcon from "@/assests/Settings.svg";
+import HelpIcon from "@/assests/Help.svg";
+import MoonIcon from "@/assests/Moon.svg";
+import ArrowDown from "@/assests/arrow-down.svg";
+import BrandLogo from "@/assests/Logo.svg";
+import BrandName from "@/assests/uifry.svg";
 
 export default function Sidebar() {
   const pathname = usePathname(); // Get current route
