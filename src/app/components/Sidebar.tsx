@@ -1,103 +1,83 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import DashboardIcon from "/public/Dashboard.svg";
+import AnalyticsIcon from "/public/Analytics.svg";
+import WalletIcon from "/public/Wallet.svg";
+import UserIcon from "/public/User.svg";
+import SettingsIcon from "/public/Settings.svg";
+import HelpIcon from "/public/Help.svg";
+import MoonIcon from "/public/Moon.svg";
+import ArrowDown from "/public/arrow-down.svg";
+import BrandLogo from "/Public/Logo.svg";
+import BrandName from "/Public/uifry.svg";
 
 export default function Sidebar() {
+  const pathname = usePathname(); // Get current route
+
+  const menuItems = [
+    {
+      href: "/dashboard",
+      icon: <DashboardIcon size={20} />,
+      label: "Dashboard",
+    },
+    {
+      href: "#analytics",
+      icon: <AnalyticsIcon size={20} />,
+      label: "Analytics",
+    },
+    { href: "/wallet", icon: <WalletIcon size={20} />, label: "My Wallet" },
+    { href: "#accounts", icon: <UserIcon size={20} />, label: "Accounts" },
+    { href: "#settings", icon: <SettingsIcon size={20} />, label: "Settings" },
+  ];
+
   return (
-    <div className="w-[230px] 2xl:w-[293px] max-h-full bg-foreground flex flex-col items-center gap-10 pt-[44.71px] p-5">
+    <div className="w-64 min-h-screen bg-foreground flex flex-col items-center gap-10 pt-[44.71px] px-6">
       <div className="flex flex-col">
         <div className="flex justify-center items-center gap-2 ">
-        <Image
-          src="/logo1.svg"
-          alt="Brand logo"
-          width={31.042}
-          height={31.042}
-        />
-        <Image
-          src="/uifry.svg"
-          alt="Brand logo"
-          width={60.158}
-          height={26.755}
-        />
+          <BrandLogo size="31.042" className="text-[#CBC8FF]" />
+          <BrandName width="60.158" height="26.755" />
         </div>
       </div>
-
-      <nav className="flex flex-col gap-7">
-        <div className="w-[200px] 2xl:w-[237.035px] flex flex-col gap-4">
-          <Link
-            href="/dashboard"
-            className="w-full flex items-center gap-4.5 p-4 rounded-lg bg-lightBg"
-          >
-            <Image
-              src="/Dashboard.svg"
-              alt="A dashboard icon"
-              width={20}
-              height={20}
-            />
-            <span className="text-background text-base font-semibold">
-              Dashboard
-            </span>
-          </Link>
-          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
-            <Image
-              src="/Analytics.svg"
-              alt="An analytics icon"
-              width={20}
-              height={20}
-            />
-            <span className="text-base">Analytics</span>
-          </Link>
-          <Link href="/wallet" className="w-full flex items-center gap-4.5 p-4">
-            <Image
-              src="/Wallet.svg"
-              alt="A wallet icon"
-              width={20}
-              height={20}
-            />
-            <span className="text-base">My Wallet</span>
-          </Link>
-          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
-            <Image
-              src="/User.svg"
-              alt="user icon"
-              width={20}
-              height={20}
-            />
-            Accounts
-          </Link>
-          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
-            <Image
-              src="/Settings.svg"
-              alt="settings icon"
-              width={20}
-              height={20}
-            />
-            Settings
-          </Link>
+      {/* Navigation */}
+      <nav className="w-full flex flex-col gap-7">
+        <div className="w-full flex flex-col gap-4">
+          {menuItems.map(({ href, icon, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`w-full flex items-center gap-4 p-4 rounded-lg transition-all ${
+                pathname === href
+                  ? "bg-[#CBC8FF] text-[#1D1D41] font-semibold"
+                  : "hover:bg-[#CBC8FF] hover:text-[#1D1D41] hover:font-medium"
+              }`}
+            >
+              {icon}
+              <span>{label}</span>
+            </Link>
+          ))}
         </div>
 
+        {/* Help & Dark Mode */}
         <div className="flex flex-col gap-4">
-        <Link href="#" className="w-full flex items-center gap-4.5 p-4">
-            <Image
-              src="/Help.svg"
-              alt="help icon"
-              width={20}
-              height={20}
-            />
+          <Link
+            href="#help"
+            className="w-full flex items-center gap-4 p-4 hover:bg-[#CBC8FF] hover:text-[#1D1D41] hover:font-medium rounded-lg"
+          >
+            <HelpIcon size={20} />
             Help Center
           </Link>
-          <Link href="#" className="w-full flex items-center gap-4.5 p-4">
-            <Image
-              src="/Dark.svg"
-              alt="A dark mode toggle icon"
-              width={20}
-              height={20}
-            />
+          <button className="w-full flex items-center gap-4 p-4 hover:bg-[#CBC8FF] hover:text-[#1D1D41] hover:font-medium rounded-lg">
+            <MoonIcon size={20} />
             Dark Mode
-          </Link>
+          </button>
         </div>
       </nav>
 
-      <div className="w-[200px] flex justify-between items-center mt-90">
+      {/* Profile Section */}
+      <div className="w-full flex justify-between items-center mt-90">
         <div className="flex items-center gap-2">
           <Image
             src="/Profile.svg"
@@ -111,12 +91,7 @@ export default function Sidebar() {
           </div>
         </div>
         <div>
-          <Image
-            src="/arrow-down.svg"
-            alt="arrown down"
-            width={16}
-            height={16}
-          />
+          <ArrowDown />
         </div>
       </div>
     </div>
