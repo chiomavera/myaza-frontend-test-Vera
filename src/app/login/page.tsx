@@ -41,49 +41,49 @@ function Login() {
 
 
   return (
-    <div className="flex min-h-screen w-full max-w-[1440px] mx-auto">
+    <div className="flex flex-col lg:flex-row min-h-screen w-full max-w-[1440px] mx-auto 2xl:max-w-[1800px]">
       {/* Left Section - Login Form */}
-      <section className="flex flex-col  w-1/2 pt-36 px-8 sm:px-12 lg:px-20 xl:px-40 bg-foreground">
+      <section className="flex flex-col w-full lg:w-1/2 pt-10 md:pt-20 lg:pt-36 2xl:pt-48 px-6 sm:px-8 md:px-12 lg:pl-16 xl:px-20 2xl:px-32 bg-foreground">
         {/* Logo */}
-        <div className="flex justify-center items-center gap-2 mb-6">
-          <Image src="/logo2.svg" alt="Brand logo" width={31} height={31} />
-          <Image src="/uifry.svg" alt="Brand name" width={60} height={27} />
+        <div className="flex justify-center items-center gap-2 mb-6 2xl:mb-8">
+          <Image src="/logo2.svg" alt="Brand logo" width={31} height={31} className="2xl:w-10 2xl:h-10" />
+          <Image src="/uifry.svg" alt="Brand name" width={60} height={27} className="2xl:w-72 2xl:h-auto" />
         </div>
 
         {/* Heading */}
-        <h1 className="text-2xl font-bold text-white">
+        <h1 className="text-xl sm:text-2xl 2xl:text-3xl font-bold text-white text-center">
           Welcome back, Ali Riaz 🙇🏾‍♀️
         </h1>
-        <p className="text-lightText text-base tracking-tight">
+        <p className="text-lightText text-base 2xl:text-lg tracking-tight text-center">
           Login to access your Uifry account
         </p>
 
         {/* Login Form */}
-        <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-4 2xl:gap-6 mt-4 2xl:mt-8 mx-auto lg:mx-0 w-full max-w-md 2xl:max-w-xl" onSubmit={handleSubmit}>
           {/* Email Input */}
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium capitalize tracking-[0.28px]">
+          <div className="flex flex-col gap-2 2xl:gap-3 w-full">
+            <label className="text-sm 2xl:text-base font-medium capitalize tracking-[0.28px]">
               Email Address
             </label>
             <input
-              className="w-[424px] h-12 text-lightText border border-[#DCD9D9] rounded-sm px-2 text-sm font-normal tracking-[0.28px]"
+              className="w-full h-12 2xl:h-14 text-lightText border border-[#DCD9D9] rounded-sm px-2 2xl:px-4 text-sm 2xl:text-base font-normal tracking-[0.28px]"
               type="email"
               placeholder="E.g Aliriaz@Uifry.com"
               value={email}
               autoComplete="false"
               onChange={(e) => setEmail(e.target.value)}
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {errors.email && <p className="text-red-500 text-sm 2xl:text-base">{errors.email}</p>}
           </div>
 
           {/* Password Input */}
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium capitalize tracking-[0.28px]">
+          <div className="flex flex-col gap-2 2xl:gap-3 w-full">
+            <label className="text-sm 2xl:text-base font-medium capitalize tracking-[0.28px]">
               Password
             </label>
-            <div className="relative">
+            <div className="relative w-full">
               <input
-                className="w-[424px] h-12 text-[#DCD9D9] !bg-transparent border border-[#DCD9D9] rounded-sm pr-10 px-2 text-sm font-normal tracking-[0.28px]"
+                className="w-full h-12 2xl:h-14 text-[#DCD9D9] !bg-transparent border border-[#DCD9D9] rounded-sm px-2 2xl:px-4 text-sm 2xl:text-base font-normal tracking-[0.28px]"
                 type={showPassword ? "text" : "password"}
                 value={password}
                 autoComplete="false"
@@ -91,58 +91,58 @@ function Login() {
               />
               <button
                 type="button"
-                className="absolute right-[-100px] top-1/2 transform -translate-y-1/2 text-[#CBC8FF] text-sm font-bold cursor-pointer"
+                className="absolute right-3 2xl:right-4 top-1/2 transform -translate-y-1/2 text-[#CBC8FF] text-sm 2xl:text-base font-bold cursor-pointer"
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
             </div>
-            {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
-            <Link href="#" className="block w-full text-right text-base font-bold">
-              I forgot My Password
+            {errors.password && <p className="text-red-500 text-sm 2xl:text-base">{errors.password}</p>}
+            <Link href="#" className="block w-full text-[#CBC8FF] text-right text-base 2xl:text-lg font-bold">
+              I forgot My Password!
             </Link>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="flex items-center justify-center w-[424px] h-12 mt-12 bg-lightBg text-foreground text-base font-bold border rounded-sm cursor-pointer"
+            className="flex items-center justify-center w-full h-12 2xl:h-14 mt-8 sm:mt-12 bg-lightBg text-foreground text-base 2xl:text-lg font-bold border rounded-sm cursor-pointer"
           >
             Login
           </button>
           
           {/* Signup Link */}
-          <div className="flex justify-center items-center">
-            <span className="text-base font-semibold tracking-[0.64px]">Not Ali Riaz?</span>
-            <Link href="#" className="text-lightBg text-base font-bold tracking-[0.64px]">
-              Signup To Continue
+          <div className="flex justify-center items-center gap-2 mt-2 2xl:mt-4">
+            <span className="text-sm sm:text-base 2xl:text-lg font-semibold tracking-[0.64px]">Not Ali Riaz?</span>
+            <Link href="#" className="text-lightBg text-sm sm:text-base 2xl:text-lg font-bold tracking-[0.64px]">
+              Login To Continue
             </Link>
           </div>
         </form>
       </section>
 
       {/* Right Section - Testimonial & Dashboard Preview */}
-      <section className=" flex flex-col justify-center items-start w-1/2 pt-16 lg:pl-16">
+      <section className="hidden lg:flex flex-col justify-center items-start w-full lg:w-1/2 pt-16 2xl:pt-24 lg:pl-8 xl:pl-16 2xl:pl-24">
         {/* Testimonial */}
-        <div className="max-w-md">
-          <Image src="/star.svg" alt="Star rating" width={120} height={20} className="w-auto h-auto" />
-          <p className="text-4xl 3xl:text-5xl font-bold leading-snug text-white mt-4">
-            “I’ve been using Uifry for over a year, and it’s helped simplify all my payments.”
+        <div className="max-w-md 2xl:max-w-2xl">
+          <Image src="/star.svg" alt="Star rating" width={120} height={20} className="w-auto h-auto 2xl:scale-125 2xl:origin-left" />
+          <p className="text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold leading-snug 2xl:leading-normal text-white mt-4 2xl:mt-6">
+            "I've been using Uifry for over a year, and it's helped simplify all my payments."
           </p>
-          <span className="block text-[#CBC8FF] text-xl font-bold mt-3">Ali Riaz</span>
-          <span className="block text-[#CBC8FF] text-base font-medium">Singapore</span>
+          <span className="block text-[#CBC8FF] text-xl 2xl:text-2xl font-bold mt-3 2xl:mt-6">Ali Riaz</span>
+          <span className="block text-[#CBC8FF] text-base 2xl:text-lg font-medium">Singapore</span>
 
           {/* Navigation Dots */}
-          <div className="flex justify-center items-center gap-2 mt-4">
-            <span className="w-6 h-3 bg-[#CBC8FF] rounded-full"></span>
-            <span className="w-3 h-3 bg-[#27264E] rounded-full"></span>
-            <span className="w-3 h-3 bg-[#27264E] rounded-full"></span>
-            <span className="w-3 h-3 bg-[#27264E] rounded-full"></span>
+          <div className="flex justify-center items-center gap-2 mt-4 2xl:mt-8 2xl:gap-3">
+            <span className="w-6 2xl:w-8 h-3 2xl:h-4 bg-[#CBC8FF] rounded-full"></span>
+            <span className="w-3 2xl:w-4 h-3 2xl:h-4 bg-[#27264E] rounded-full"></span>
+            <span className="w-3 2xl:w-4 h-3 2xl:h-4 bg-[#27264E] rounded-full"></span>
+            <span className="w-3 2xl:w-4 h-3 2xl:h-4 bg-[#27264E] rounded-full"></span>
           </div>
         </div>
 
         {/* Dashboard Screenshot */}
-        <div className="w-full">
+        <div className="w-full 2xl:mt-8">
           <Image
             src="/Group.svg"
             alt="Dashboard preview"
