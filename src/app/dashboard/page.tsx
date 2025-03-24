@@ -5,46 +5,9 @@ import CardContainer from "../components/CardContainer";
 import TransactionsTable from "../components/TransactionsTable";
 import Income from "../components/Income";
 import Activity from "../components/Activity";
+import transactions1 from "./transactions1";
 
 export default function Dashboard() {
-  const transactions1 = [
-    {
-      Name: "Adobe After Effect",
-      Date: "Sat, 20 Apr 2020",
-      Amount: "$80.09",
-      Status: "Deposited",
-     imageURL:  "/Adobe.svg"
-    },
-    {
-      Name: "McDonald's",
-      Date: "Sat, 20 Apr 2020",
-      Amount: "$80.09",
-      Status: "Deposited",
-     imageURL:  "/McDonald.svg"
-    },
-    {
-      Name: "Levi",
-      Date: "Sat, 20 Apr 2020",
-      Amount: "$80.09",
-      Status: "Deposited",
-     imageURL:  "/Levi.svg"
-    },
-    {
-      Name: "Adobe After",
-      Date: "Sat, 20 Apr 2020",
-      Amount: "$80.09",
-      Status: "Deposited",
-     imageURL:  "/Adobe.svg"
-    },
-    {
-      Name: "Levi",
-      Date: "Sat, 20 Apr 2020",
-      Amount: "$80.09",
-      Status: "Deposited",
-     imageURL:  "/Levi.svg"
-    },
-  ];
-
   return (
     <div className="flex max-w-full">
       <Sidebar />
@@ -75,7 +38,7 @@ export default function Dashboard() {
             <Analytics />
             <TransactionsTable
               columns={["Name", "Date", "Amount", "Status"]}
-              data={transactions1} 
+              data={transactions1}
             />
           </section>
           <section className="w-[439px] flex flex-col gap-10">
