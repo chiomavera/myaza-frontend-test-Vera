@@ -7,6 +7,7 @@ import Link from "next/link";
 import BrandLogo from "@/assests/Logo.svg";
 import BrandName from "@/assests/uifry.svg";
 import Star from "@/assests/star.svg";
+import testimonials from "./testimonals";
 
 function Login() {
   const [email, setEmail] = useState<string>("");
@@ -15,6 +16,7 @@ function Login() {
   const [errors, setErrors] = useState<{ email?: string; password?: string }>(
     {}
   );
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const router = useRouter();
   const validateForm = (): boolean => {
@@ -47,7 +49,7 @@ function Login() {
   return (
     <div className="flex flex-col lg:flex-row min-h-screen w-full max-w-[1440px] mx-auto 2xl:max-w-[1800px]">
       {/* Left Section - Login Form */}
-      <section className="flex flex-col w-full lg:w-1/2 pt-10 md:pt-20 lg:pt-36 2xl:pt-48 px-6 sm:px-8 md:px-12 lg:pl-16 xl:px-20 2xl:px-32 bg-foreground">
+      <section className="flex flex-col w-full lg:w-1/2 pt-10 md:pt-20 lg:pt-36 2xl:pt-48 px-6 sm:px-8 md:px-12 lg:pl-20 xl:pl-28 2xl:pl-40 bg-foreground">
         {/* Logo */}
         <div className="flex justify-center items-center gap-2 mb-6 2xl:mb-8">
           <BrandLogo
@@ -109,7 +111,7 @@ function Login() {
               />
               <button
                 type="button"
-                className="absolute right-3 2xl:right-4 top-1/2 transform -translate-y-1/2 text-[#CBC8FF] text-sm 2xl:text-base font-bold cursor-pointer"
+                className="absolute right-3 2xl:right-4 top-1/2 transform -translate-y-1/2 text-[#CBC8FF] text-sm 2xl:text-base font-bold cursor-pointer transition-all duration-300 hover:text-white focus:text-white focus:outline-none"
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? "Hide" : "Show"}
@@ -122,7 +124,7 @@ function Login() {
             )}
             <Link
               href="#"
-              className="block w-full text-[#CBC8FF] text-right text-base 2xl:text-lg font-bold"
+              className="block w-full text-[#CBC8FF] text-right text-base 2xl:text-lg font-bold transition-all duration-300 hover:text-white"
             >
               I forgot My Password!
             </Link>
@@ -131,7 +133,7 @@ function Login() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="flex items-center justify-center w-full h-12 2xl:h-14 mt-8 sm:mt-12 bg-lightBg text-foreground text-base 2xl:text-lg font-bold border rounded-sm cursor-pointer"
+            className="flex items-center justify-center w-full h-12 2xl:h-14 mt-8 sm:mt-12 bg-lightBg text-foreground text-base 2xl:text-lg font-bold border rounded-sm cursor-pointer transition-all duration-300 hover:bg-opacity-80 hover:scale-105"
           >
             Login
           </button>
@@ -142,8 +144,8 @@ function Login() {
               Not Ali Riaz?
             </span>
             <Link
-              href="#"
-              className="text-lightBg text-sm sm:text-base 2xl:text-lg font-bold tracking-[0.64px]"
+              href="/dashboard"
+              className="text-lightBg text-sm sm:text-base 2xl:text-lg font-bold tracking-[0.64px] transition-all duration-300 hover:text-[#A8A3FF] hover:underline"
             >
               Login To Continue
             </Link>
@@ -160,23 +162,29 @@ function Login() {
             className="w-auto h-auto 2xl:scale-125 2xl:origin-left"
           />
           <p className="text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold leading-snug 2xl:leading-normal text-white mt-4 2xl:mt-6">
-            &quot;I&apos;ve been using Uifry for over a year, and it&apos;s
-            helped simplify all my payments.&quot;
+            {testimonials[activeIndex].text}
           </p>
 
           <span className="block text-[#CBC8FF] text-xl 2xl:text-2xl font-bold mt-3 2xl:mt-6">
-            Ali Riaz
+            {testimonials[activeIndex].name}
           </span>
           <span className="block text-[#CBC8FF] text-base 2xl:text-lg font-medium">
-            Singapore
+            {testimonials[activeIndex].location}
           </span>
 
           {/* Navigation Dots */}
-          <div className="flex justify-center items-center gap-2 mt-4 2xl:mt-8 2xl:gap-3">
-            <span className="w-6 2xl:w-8 h-3 2xl:h-4 bg-[#CBC8FF] rounded-full"></span>
-            <span className="w-3 2xl:w-4 h-3 2xl:h-4 bg-[#27264E] rounded-full"></span>
-            <span className="w-3 2xl:w-4 h-3 2xl:h-4 bg-[#27264E] rounded-full"></span>
-            <span className="w-3 2xl:w-4 h-3 2xl:h-4 bg-[#27264E] rounded-full"></span>
+          <div className="flex justify-center items-center gap-2 mt-4 2xl:mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`w-3 2xl:w-4 h-3 2xl:h-4 rounded-full transition-all ${
+                  activeIndex === index
+                    ? "bg-[#CBC8FF] w-6 2xl:w-8"
+                    : "bg-[#27264E]"
+                }`}
+              />
+            ))}
           </div>
         </div>
 
