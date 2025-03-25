@@ -2,10 +2,9 @@
 
 :root {
   --background: #141332;
-  --foreground: #1D1D41;
-  --lightText: #DCD9D9;
-  --lightBg: #CBC8FF;
-  
+  --foreground: #1d1d41;
+  --lightText: #dcd9d9;
+  --lightBg: #cbc8ff;
 }
 
 @theme inline {
@@ -16,7 +15,6 @@
   --font-sans: var(--font-karla);
   --bg-card: url(/CardBg.svg);
 }
-
 
 body {
   background: var(--background);
