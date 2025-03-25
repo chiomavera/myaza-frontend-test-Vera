@@ -28,12 +28,6 @@ const yearlyOutcome: Record<string, number[]> = {
 };
 
 function Analytics({ selectedYear, setSelectedYear }: AnalyticsProps) {
-  // Calculate total income & outcome
-  const totalIncome =
-    yearlyIncome[selectedYear]?.reduce((acc, val) => acc + val, 0) || 0;
-  const totalOutcome =
-    yearlyOutcome[selectedYear]?.reduce((acc, val) => acc + val, 0) || 0;
-
   return (
     <div className="w-full bg-foreground flex flex-col gap-6 p-6 rounded-2xl hover:scale-105 transition-transform duration-300 ease-in-out shadow-md">
       {/* Header */}
