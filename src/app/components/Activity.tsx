@@ -8,8 +8,18 @@ import PieChart from "./PieChart"; // Import the PieChart component
 
 // Define the type for all 12 months
 type Month =
-  | "Jan" | "Feb" | "Mar" | "Apr" | "May" | "Jun" | "Jul" | "Aug"
-  | "Sep" | "Oct" | "Nov" | "Dec";
+  | "Jan"
+  | "Feb"
+  | "Mar"
+  | "Apr"
+  | "May"
+  | "Jun"
+  | "Jul"
+  | "Aug"
+  | "Sep"
+  | "Oct"
+  | "Nov"
+  | "Dec";
 
 function Activity() {
   const [selectedMonth, setSelectedMonth] = useState<Month>("Jan"); // Default month
